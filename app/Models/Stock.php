@@ -25,7 +25,7 @@ class Stock extends Model
     }
 
     public function usuario(){
-        return $this->belongsTo('App\Models\Categoria')->withDefault([
+        return $this->belongsTo('App\Models\Usuario')->withDefault([
             'id' => 0,
             'nombre' => 'Usuario Desconocido'
         ]);
