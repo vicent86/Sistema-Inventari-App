@@ -1,0 +1,13 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/js/proveedor.js": "/js/proveedor.js",
+    "/js/producto.js": "/js/producto.js",
+    "/js/stock.js": "/js/stock.js",
+    "/js/categoria.js": "/js/categoria.js",
+    "/js/factura.js": "/js/factura.js",
+    "/js/informe.js": "/js/informe.js",
+    "/js/role.js": "/js/role.js",
+    "/js/usuario.js": "/js/usuario.js",
+    "/js/cliente.js": "/js/cliente.js",
+    "/js/panel.js": "/js/panel.js"
+}

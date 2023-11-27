@@ -1,0 +1,5 @@
+{
+    "sourceType": "module",
+    "presets": ["@babel/preset-env"],
+    "plugins": ["@babel/transform-arrow-functions"]
+}
