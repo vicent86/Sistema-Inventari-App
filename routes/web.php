@@ -68,13 +68,13 @@ Route::group(['middleware' => ['auth', 'check.permission']], function () {
 
     //Role
     Route::resource('role', RoleController::class);
-    Route::get('role/delete/{id}', [RoleController::class, 'destroy']);
-    Route::post('role/update/{id}', [RoleController::class, 'update']);
+    //Route::get('role/delete/{id}', [RoleController::class, 'destroy']);
+    //Route::post('role/update/{id}', [RoleController::class, 'update']);
     Route::get('role-list', [RoleController::class, 'RoleList']);
-    Route::post('permission', [RoleController::class, 'Permission']);
-    Route::get('usuario-role', [RoleController::class,'userRole']);
-    //Cliente
+    //Route::post('permission', [RoleController::class, 'Permission']);
+    //Route::get('usuario-role', [RoleController::class,'userRole']);
 
+    //Cliente
     Route::resource('clientes', ClienteController::class);
     Route::get('clientes/delete/{id}', [ClienteController::class, 'destroy']);
     Route::post('clientes/update/{id}', [ClienteController::class, 'update']);

@@ -50,7 +50,8 @@ class UsuarioManagementController extends Controller
             'email' => 'required|unique:users',
             'password' => 'required|confirmed',
             'password_confirmation' => 'required',
-            'role' => 'required',
+            'role_nombre' => 'required',
+            'descripcion' => 'required',
         ]);
 
         try {
@@ -60,7 +61,7 @@ class UsuarioManagementController extends Controller
             $user->nombre = $request->nombre;
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
-            $user->role_id = $request->role;
+            $user->role_id = $request->role_nombre;
             $user->branch_id = 1;
             $user->save();
 
@@ -87,7 +88,8 @@ class UsuarioManagementController extends Controller
         $request->validate([
             'nombre' => 'required',
             'email' => 'required|unique:users,email,'.$id,
-            'role' => 'required',
+            'role_nombre' => 'required',
+            'descripcion' => 'required',
         ]);
 
         try {
@@ -95,7 +97,8 @@ class UsuarioManagementController extends Controller
             $user =  Usuario::find($id);
             $user->nombre = $request->nombre;
             $user->email = $request->email;
-            $user->role_id = $request->role;
+            $user->role_id = $request->role_nombre;
+            $user->descripcion = $request->descripcion;
             $user->update();
 
             return response()->json(['status' => 'success', 'message' => 'Usuario actualizado']);

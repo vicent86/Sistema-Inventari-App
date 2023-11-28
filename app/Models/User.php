@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'nombre_role',
+        'descripcion',
     ];
 
     /**
@@ -42,4 +44,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    //Añadimos Accesor para el nombre rol
+    public function getRoleNameAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    // y otro Accesor para la descripcion
+
+    public function getRoleDescriptionAttribute($value)
+    {
+        return ucfirst($value);
+    }
 }
