@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Venta;
 use Illuminate\Http\Request;
 
@@ -31,7 +32,7 @@ class VentaController extends Controller
         //
     }
 
-    public function update(Request $request,Venta $venta)
+    public function update(Request $request, Venta $venta)
     {
         //
     }

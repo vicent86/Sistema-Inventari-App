@@ -32,7 +32,7 @@ class VentaDetallesController extends Controller
         //
     }
 
-    public function update(Request $request,VentaDetalles $ventaDetalles)
+    public function update(Request $request, VentaDetalles $ventaDetalles)
     {
         //
     }

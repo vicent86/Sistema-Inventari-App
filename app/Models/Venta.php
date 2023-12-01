@@ -10,20 +10,19 @@ class Venta extends Model
     use HasFactory;
     protected $fillable = [
         'cliente_id',
-        'producto_id',
-        'cantidad',
         'precio_total',
-        'fecha_venta'
+        'fecha_venta',
     ];
 
-    public function cliente(){
-        return $this->belongsTo('App\Models\Cliente');
+    public function cliente() {
+        return $this->hasMany('App\Models\Cliente','cliente_id');
     }
 
-    public function usuario(){
-        return $this->belongsTo('App\Models\Usuario')->withDefault([
-            'id' => 0,
-            'nombre' => 'Usuario Desconocido'
-        ]);
+    public function pago() {
+        return $this->hasMany('App\Models\Pago','id_venta');
+    }
+
+    public function ventaDetalles() {
+        return $this->hasMany('App\Models\VentaDetalles', 'venta_id');
     }
 }

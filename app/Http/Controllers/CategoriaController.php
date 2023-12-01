@@ -10,15 +10,15 @@ class CategoriaController extends Controller
 {
     public function index()
     {
-        //return view('categoria.categoria');
+        return view('category.category');
     }
 
     public function CategoriaLista(Request $request)
     {
         $categorias = Categoria::orderBy('id','desc');
 
-        if ($request->nombre != '') {
-            $categorias->where('nombre', 'LIKE', '%'. $request->nombre . '%');
+        if ($request->name != '') {
+            $categorias->where('name', 'LIKE', '%'. $request->name . '%');
         }
 
         $categorias = $categorias->paginate(10);
@@ -26,7 +26,7 @@ class CategoriaController extends Controller
         return $categorias;
     }
 
-    public function AllCategoria()
+    public function AllCategory()
     {
         $categoria = Categoria::all();
 
@@ -44,9 +44,9 @@ class CategoriaController extends Controller
         ]);
 
         try {
-            $categoria = new Categoria;
-            $categoria->nombre = $request->nombre;
-            $categoria->save();
+            $category = new Categoria;
+            $category->nombre = $request->nombre;
+            $category->save();
             return response()->json(['status' => 'success', 'message' => 'Categoría Agregada']);
 
         } catch (\Exception $e) {
@@ -54,7 +54,7 @@ class CategoriaController extends Controller
 
         }
     }
-    public function show(Categoria $category)
+    public function show(Categoria $categoria)
     {
         //
     }
@@ -68,9 +68,9 @@ class CategoriaController extends Controller
             'nombre'=> 'required|unique:categories,name,'. $id,
         ]);
         try {
-            $categoria = Categoria::find($id);
-            $categoria->name = $request->nombre;
-            $categoria->update();
+            $category = Categoria::find($id);
+            $category->nombre = $request->nombre;
+            $category->update();
             return response()->json(['status'=> 'success','message'=> 'Categoría actualizada']);
         } catch (\Exception $e) {
             return response()->json(['status'=> 'error', 'message' => 'Algo salio mal!']);
@@ -78,17 +78,17 @@ class CategoriaController extends Controller
     }
     public function destroy($id)
     {
-        $categoria = Categoria::find($id);
-        $check = Producto::where('category_id', '=', $categoria->id)->count();
+        $category = Categoria::find($id);
+        $check = Producto::where('categoria_id', '=', $category->id)->count();
         if ($check > 0) {
-            return response()->json(['status' => 'error', 'message' => 'Esta categoría no esta vacía, debe eliminar primero los productos']);
+            return response()->json(['status'=> 'error','message'=> 'Esta categoría no esta vacía, debe eliminar primero los productos']);
         }
         try {
-            $categoria->delete();
-            return response()->json(['status' => 'success', 'message' => 'Categoría eliminada']);
+            $category->delete();
+            return response()->json(['status'=> 'success','message'=> 'Categoría eliminada']);
         } catch (\Exception $e) {
 
-            return response()->json(['status' => 'error', 'message' => 'Algo salio mal!']);
+            return response()->json(['status'=> 'error', 'message' => 'Algo salio mal!']);
         }
     }
 }

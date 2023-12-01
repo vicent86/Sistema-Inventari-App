@@ -18,11 +18,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nombre',
         'email',
         'password',
-        'nombre_role',
-        'descripcion',
+        'email_verified_at',
+        'remember:token',
+        'role',
     ];
 
     /**
@@ -45,16 +46,6 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    //Añadimos Accesor para el nombre rol
-    public function getRoleNameAttribute($value)
-    {
-        return ucfirst($value);
-    }
 
-    // y otro Accesor para la descripcion
 
-    public function getRoleDescriptionAttribute($value)
-    {
-        return ucfirst($value);
-    }
 }

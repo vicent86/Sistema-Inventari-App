@@ -8,20 +8,19 @@ use App\Models\Proveedor;
 use App\Models\Stock;
 use App\Models\VentaDetalles;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class StockController extends Controller
 {
     public function index()
     {
-        //$proveedor = Proveedor::orderBy('name', 'asc')->get();
-        //$categoria = Categoria::orderBy('name', 'asc')->get();
-        //$producto = Producto::orderBy('product_name', 'asc')->get();
-        //return view('stock.stock', [
-           // 'proveedor' => $proveedor,
-            //'categoria' => $categoria,
-            //'producto' => $producto,
-        //]);
+        $vendor = Proveedor::orderBy('nombre', 'asc')->get();
+        $category = Categoria::orderBy('nombre', 'asc')->get();
+        $product = Producto::orderBy('producto_nombre', 'asc')->get();
+        return view('stock.stock', [
+            'proveedor' => $vendor,
+            'categoria' => $category,
+            'producto' => $product,
+        ]);
     }
 
 
@@ -30,17 +29,14 @@ class StockController extends Controller
 
         $stock = Stock::with(
             [
-                'product' => function ($query) {
+                'producto' => function ($query) {
                     $query->select('id', 'producto_nombre');
                 },
-                'vendor' => function ($query) {
+                'proveedor' => function ($query) {
                     $query->select('id', 'nombre');
                 },
-                'user' => function ($query) {
 
-                    $query->select('id', 'nombre');
-                },
-                'category' => function ($query) {
+                'categoria' => function ($query) {
 
                     $query->select('id', 'nombre');
                 }
@@ -76,13 +72,13 @@ class StockController extends Controller
     public function StockListaCan($id)
     {
 
-        $Lista = Stock::where('producto_id', '=', $id)
+        $chalan = Stock::where('producto_id', '=', $id)
             ->where('cantidad_actual', '>', 0)
             ->orderBy('updated_at', 'desc')
             ->get();
 
 
-        return $Lista;
+        return $chalan;
 
     }
 
@@ -109,21 +105,21 @@ class StockController extends Controller
             $stock = new Stock;
             $stock->categoria_id = $request->categoria;
             $stock->producto_id = $request->producto;
+            $stock->producto_code = time();
             $stock->proveedor_id = $request->proveedor;
-            $stock->usuario_id = Auth::user()->id;
             $stock->precio_compra = $request->precio_compra;
             $stock->precio_venta = $request->precio_venta;
-            $stock->Lista_no = date('Y-m-d');
-            $stock->cantidad_stock = $request->cantidad;
+            $stock->lista_no = date('Y-m-d');
+            $stock->stock_cantidad = $request->cantidad;
             $stock->cantidad_actual = $request->cantidad;
             $stock->descuento = 0;
             $stock->nota = $request->nota;
             $stock->estado = 1;
             $stock->save();
 
-            Stock::where('producto_id', '=', $request->producto)
+            Stock::where('producto_id', '=', $request->product)
                 ->where('cantidad_actual', '>', 0)
-                ->update(['precio_venta' => $request->precio_venta]);
+                ->update(['precio_venta' => $request->selling_price]);
 
             return response()->json(['status' => 'success', 'message' => 'Producto añadido a existencias']);
 
@@ -192,22 +188,22 @@ class StockController extends Controller
 
         if ($request->state == '+') {
 
-            $stock->cantidad_actual= $stock->cantidad_actual+ $request->new_qty;
-            $stock->cantidad_stock = $stock->cantidad_stock + $request->new_qty;
+            $stock->current_quantity = $stock->current_quantity + $request->new_qty;
+            $stock->stock_quantity = $stock->stock_quantity + $request->new_qty;
 
             $stock->update();
 
             return response()->json(['status' => 'success', 'message' => 'Cantidad actualizada']);
         } else {
 
-            if ($request->new_qty > $stock->cantidad_actual) {
+            if ($request->new_qty > $stock->current_quantity) {
 
                 return response()->json(['status' => 'error', 'message' => 'La cantidad es mayor que la cantidad actual']);
 
             } else {
 
-                $stock->cantidad_actual = $stock->cantidad_actual - $request->new_qty;
-                $stock->cantidad_stock = $stock->cantidad_stock - $request->new_qty;
+                $stock->current_quantity = $stock->current_quantity - $request->new_qty;
+                $stock->stock_quantity = $stock->stock_quantity - $request->new_qty;
 
                 $stock->update();
 

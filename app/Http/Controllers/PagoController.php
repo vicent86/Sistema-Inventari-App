@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Pago;
 use App\Models\Venta;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PagoController extends Controller
@@ -25,33 +24,32 @@ class PagoController extends Controller
         $request->validate([
             'fecha_pago' => 'required',
             'importe_pago' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
-            'pago_in' => 'required',
+            'payment_in' => 'required',
         ]);
 
         try{
 
             $venta = Venta::find($request->id);
 
-            $pago = new Pago;
+            $payment = new Pago();
 
-            $pago->venta_id = $request->id;
-            $pago->cliente_id = $venta->cliente_id;
-            $pago->usuario_id = Auth::usuario()->id;
-            $pago->fecha = date("Y-m-d", strtotime($request->fecha_pago));
-            $pago->importe = $request->importe_pago;
-            $pago->pago_in = $request->pago_in;
-            $pago->banco_informacion = $request->banco_info;
+            $payment->id_venta = $request->id;
+            $payment->cliente_id = $venta->cliente_id;
+            $payment->fecha = date("Y-m-d", strtotime($request->fecha_pago));
+            $payment->importe = $request->importe_pago;
+            $payment->paid_in = $request->payment_in;
+            $payment->banco_informacion = $request->banco_info;
 
-            $pago->save();
+            $payment->save();
 
-            $paid_amount = $venta->paid_amount+$request->importe_pago;
+            $importe_pagado = $venta->importe_pago+$request->importe_pago;
 
-            if($paid_amount>=$venta->total_amount){
+            if($importe_pagado>=$venta->total_importe){
 
-                $venta->payment_status = 1;
+                $venta->estado_pago = 1;
             }
 
-            $venta->importe_pago = $paid_amount;
+            $venta->paid_amount = $importe_pagado;
 
             $venta->save();
 
@@ -72,12 +70,12 @@ class PagoController extends Controller
     public function show($id)
     {
 
-        $sell = Venta::with('customer')->find($id);
+        $venta = Venta::with('cliente')->find($id);
 
-        $payment = Pago::with('user')->where('sell_id','=',$id)->get();
+        $pago = Pago::with('cliente')->where('id_venta','=',$id)->get();
 
 
-        return ['payment' => $payment,'invoice' => $sell];
+        return ['payment' => $pago,'factura' => $venta];
     }
 
     public function edit(Pago $pago)
@@ -85,7 +83,7 @@ class PagoController extends Controller
         //
     }
 
-    public function update(Request $request,Pago $pago)
+    public function update(Request $request, Pago $pago)
     {
         //
     }
@@ -99,11 +97,11 @@ class PagoController extends Controller
 
             $payment = Pago::find($id);
 
-            $sell = Venta::find($payment->sell_id);
+            $venta = Venta::find($payment->sell_id);
 
-            $sell->paid_amount = $sell->paid_amount - $payment->amount;
+            $venta->importe_pagado = $venta->importe_pagado - $payment->amount;
 
-            $sell->update();
+            $venta->update();
 
             $payment->delete();
 

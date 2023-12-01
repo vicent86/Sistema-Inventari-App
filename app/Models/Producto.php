@@ -9,26 +9,30 @@ class Producto extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    protected  $fillable = [
         'nombre',
         'descripcion',
-        'categoria',
         'precio',
-        'stock',
         'estado',
+        'id_proveedor',
+        'IVA',
     ];
+
+
     public function categoria(){
-        return $this->belongsTo('App\Models\Categoria')->withDefault([
-            'id' => 0,
-            'nombre' => 'Categoria Desconocida',
-        ]);
+        return $this->hasMany('App\Models\Categoria', 'categoria_id');
     }
 
-    public function stock(){
+    public function proveedor(){
+        return $this->hasMany('App\Models\Proveedor', 'id_proveedor');
+    }
+    public function ventaDetalles(){
+        return $this->hasMany('App\Models\VentaDetalles');
+    }
+
+    public function stock() {
         return $this->hasMany('App\Models\Stock');
     }
 
-    public function venta_detalles(){
-        return $this->hasMany('App\Models\VentaDetalles');
-    }
+
 }

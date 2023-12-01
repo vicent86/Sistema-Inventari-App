@@ -11,7 +11,7 @@ class ClienteController extends Controller
     public function index()
     {
 
-        //return view('cliente.cliente');
+        return view('cliente.cliente');
 
     }
 
@@ -19,38 +19,45 @@ class ClienteController extends Controller
     public function ClienteLista(Request $request){
 
         $nombre = $request->nombre;
-        $email = $request->email;
+        $direccion = $request->direccion;
         $telefono = $request->telefono;
+        $cif = $request->cif;
         $cliente = Cliente::withCount([
-            'sell AS total_amount' => function ($query){
+            'venta AS importe_total' => function ($query){
 
-                $query->select(DB::raw("COALESCE(SUM(total_amount),0)"));
-
-            },
-
-            'sell AS total_paid_amount' => function ($query){
-
-                $query->select(DB::raw("COALESCE(SUM(paid_amount),0)"));
+                $query->select(DB::raw("COALESCE(SUM(importe_total),0)"));
 
             },
 
-        ])->orderBy('customer_name','asc');
+            'venta AS total_importe_pagado' => function ($query){
+
+                $query->select(DB::raw("COALESCE(SUM(importe_pagado),0)"));
+
+            },
+
+        ])->orderBy('nombre_cliente','asc');
 
         if($nombre != ''){
 
-            $cliente->where('customer_name','LIKE','%'.$nombre.'%');
+            $cliente->where('nombre_cliente','LIKE','%'.$nombre.'%');
 
         }
 
-        if($email != ''){
+        if($direccion != ''){
 
-            $cliente->where('email','LIKE','%'.$email.'%');
+            $cliente->where('direccion','LIKE','%'.$direccion.'%');
 
         }
 
         if($telefono != ''){
 
-            $cliente->where('phone','LIKE','%'.$telefono.'%');
+            $telefono->where('telefono','LIKE','%'.$telefono.'%');
+
+        }
+
+        if($cif != ''){
+
+            $cif->where('cif','LIKE','%'.$cif.'%');
 
         }
 
@@ -70,18 +77,19 @@ class ClienteController extends Controller
         $request->validate([
 
             'nombre_cliente' => 'required',
-            'email' => 'nullable|email|unique:customers',
-            'telefono' => 'nullable|numeric|unique:customers',
+            'direccion' => 'required|unique:clientes',
+            'telefono' => 'nullable|numeric|unique:clientes',
+            'cif'       => 'required|nullable|unique:clientes',
         ]);
 
         try{
-            $cliente = new Cliente;
+            $customer = new Cliente();
 
-            $cliente->nombre_cliente = $request->nombre_cliente;
-            $cliente->email = $request->email;
-            $cliente->telefono = $request->telefono;
-            $cliente->direccion = $request->direccion;
-            $cliente->save();
+            $customer->nombre_cliente = $request->nombre_cliente;
+            $customer->direccion = $request->direccion;
+            $customer->telefono = $request->telefono;
+            $customer->cif = $request->cif;
+            $customer->save();
 
             return response()->json(['status'=>'success','message'=>'Cliente agregado']);
         }
@@ -112,17 +120,18 @@ class ClienteController extends Controller
         $request->validate([
 
             'nombre_cliente' => 'required',
-            'email' => 'nullable|email|unique:customers,email,'.$request->id,
-            'telefono' => 'nullable|numeric|unique:customers,email,'.$request->id,
+            'direccion' => 'nullable|direccion|unique:clientes,direccion,'.$request->id,
+            'telefono' => 'nullable|numeric|unique:clientes,telefono,'.$request->id,
+            'cif'       => 'nullable|unique:clientes,cif'.$request->id,
         ]);
 
         try{
-            $cliente = Cliente::find($id);
-            $cliente->nombre_cliente = $request->nombre_cliente;
-            $cliente->email = $request->email;
-            $cliente->telefono = $request->telefono;
-            $cliente->direccion = $request->direccion;
-            $cliente->update();
+            $customer = Cliente::find($id);
+            $customer->nombre_cliente = $request->nombre_cliente;
+            $customer->direccion = $request->direccion;
+            $customer->telefono = $request->telefono;
+            $customer->cif = $request->cif;
+            $customer->update();
 
             return response()->json(['status'=>'success','message'=>'Información del cliente actualizada']);
         }

@@ -9,22 +9,13 @@ class Pago extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'cliente_id',
-        'orden_id',
-        'importe',
+        'id_venta',
+        'Importe',
         'fecha_pago',
-        'metodo_pago'
+        'metodo_pago',
     ];
 
-    public function cliente() {
-        return $this->belongsTo('App\Models\Cliente');
+    public function venta(){
+        return $this->hasMany('App\Models\Venta', 'id_venta');
     }
-
-    public function usuario() {
-        return $this ->belongsTo('App\Models\Usuario')->withDefault([
-            'id' => 0,
-            'nombre' => 'Usuario Desconocido'
-        ]);
-    }
-
 }

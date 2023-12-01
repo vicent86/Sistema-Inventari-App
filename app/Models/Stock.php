@@ -16,26 +16,7 @@ class Stock extends Model
         'localizacion',
     ];
 
-    public function producto(){
-        return $this->belongsTo('App\Models\Producto');
-    }
-
-    public function categoria(){
-        return $this->belongsTo('App\Models\Categoria');
-    }
-
-    public function usuario(){
-        return $this->belongsTo('App\Models\Usuario')->withDefault([
-            'id' => 0,
-            'nombre' => 'Usuario Desconocido'
-        ]);
-    }
-
-    public function proveedor(){
-        return $this->belongsTo('App\Models\Proveedor');
-    }
-
-    public function venta_detalles(){
-        return $this->hasMany('App\Models\VentaDetalles', 'stock_id');
+    public function producto() {
+        return $this->hasMany('App\Models\Producto', 'producto_id');
     }
 }

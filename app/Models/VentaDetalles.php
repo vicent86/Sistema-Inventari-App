@@ -9,30 +9,13 @@ class VentaDetalles extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'venta_id',
         'producto_id',
-        'precio_productio',
+        'precio_producto',
         'cantidad',
-        'subtotal',
+        'venta_id',
     ];
 
-    public function stock() {
-        return $this->belongsTo('App\Models\Stock', 'stock_id');
+    public function venta() {
+        return $this->hasMany('App\Models\Venta','venta_id');
     }
-
-    public function producto(){
-        return $this->belongsTo('App\Models\Producto');
-    }
-
-    public function cliente(){
-        return $this->belongsTo('App\Models\Cliente');
-    }
-
-    public function usuario(){
-        return $this->belongsTo('App\Models\Usuario')->withDefault([
-            'id' => 0,
-            'nombre' => 'Usuario Desconocido'
-        ]);
-    }
-
 }

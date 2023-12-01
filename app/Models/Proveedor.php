@@ -18,7 +18,7 @@ class Proveedor extends Model
         'cualificacion'
     ];
 
-    public function stock() {
-        return $this->hasMany('App\Models\Stock');
+    public function producto() {
+        return $this->hasMany('App\Models\Producto','id_proveedor');
     }
 }

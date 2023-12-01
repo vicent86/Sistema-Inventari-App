@@ -21,7 +21,7 @@ class ProveedorController extends Controller
 
         $proveedor = Proveedor::orderBy('id', 'desc');
 
-        if ($request->name != '') {
+        if ($request->nombre != '') {
 
             $proveedor->where('nombre', 'LIKE', '%' . $request->nombre . '%');
         }
@@ -34,6 +34,11 @@ class ProveedorController extends Controller
         if ($request->telefono != '') {
 
             $proveedor->where('telefono', 'LIKE', '%' . $request->telefono . '%');
+        }
+
+        if ($request->direccion != '') {
+
+            $proveedor->where('direccion', 'LIKE', '%' . $request->direccion . '%');
         }
 
         $proveedor = $proveedor->paginate(10);
@@ -51,8 +56,9 @@ class ProveedorController extends Controller
 
         $request->validate([
             'nombre' => 'required',
-            'email' => 'nullable|unique:vendors',
-            'telefono' => 'required|unique:vendors'
+            'email' => 'nullable|unique:proveedores',
+            'telefono' => 'required|unique:proveedores',
+            'direccion'=> 'required|unique:proveedores',
         ]);
 
 

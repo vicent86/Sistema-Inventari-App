@@ -9,26 +9,32 @@ use Illuminate\Http\Request;
 
 class ProductoController extends Controller
 {
-    public function index ()
+    public function index()
     {
-        //$categoria = Categoria::orderBy('nombre', 'asc')->get();
-        //return view('producto.producto', ['categoria' => $categoria]);
+
+
+        $categoria = Categoria::orderBy('nombre', 'asc')
+            ->get();
+        return view('producto.producto', ['categoria' => $categoria]);
     }
 
-    public function create ()
+    public function create()
     {
         //
     }
 
-    public function ProductoLista(Request $request)
-    {
-           $producto = Producto::with([
-               'categoria' => function ($query) {
-                    $query->select('id', 'nombre');
-               }
-           ])->orderBy('producto_nombre', 'asc');
 
-           $nombre = $request->nombre;
+    public function ProductList(Request $request)
+    {
+
+
+        $producto = Producto::with([
+            'categoria' => function ($query) {
+                $query->select('id', 'name');
+            }
+        ])->orderBy('producto_nombre', 'asc');
+
+        $nombre = $request->nombre;
 
         if ($nombre != '') {
 
@@ -38,7 +44,7 @@ class ProductoController extends Controller
 
         if ($request->cat != '') {
 
-            $producto->where('categoria_id', '=', $request->cat);
+            $producto->where('category_id', '=', $request->cat);
 
         }
 
@@ -59,19 +65,19 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required|unique:products,producto_nombre',
+            'nombre' => 'required|unique:productos,producto_nombre',
             'categoria' => 'required',
         ]);
 
         try {
 
-            $producto = new Producto;
+            $product = new Producto();
 
-            $producto->categoria_id = $request->categoria;
-            $producto->producto_nombre = $request->nombre;
-            $producto->descrpcion = $request->descripcion;
+            $product->categoria_id = $request->categoria;
+            $product->producto_nombre = $request->nombre;
+            $product->descripcion = $request->descripcion;
 
-            $producto->save();
+            $product->save();
 
             return response()->json(['status' => 'success', 'message' => 'Producto agregado']);
         } catch (\Exception $e) {
@@ -99,12 +105,12 @@ class ProductoController extends Controller
 
         try {
 
-            $producto = Producto::find($id);
-            $producto->categoria_id = $request->categoria;
-            $producto->producto_nombre = $request->nombre;
-            $producto->descripcion = $request->descripcion;
+            $product = Producto::find($id);
+            $product->categoria_id = $request->categoria;
+            $product->producto_nombre = $request->nombre;
+            $product->descripcion = $request->descripcion;
 
-            $producto->update();
+            $product->update();
 
             return response()->json(['status' => 'success', 'message' => 'Producto actualizado']);
         } catch (\Exception $e) {
@@ -118,9 +124,9 @@ class ProductoController extends Controller
     {
 
 
-        $producto = Producto::find($id);
+        $product = Producto::find($id);
 
-        $check = Stock::where('product_id', '=', $producto->id)->count();
+        $check = Stock::where('producto_id', '=', $product->id)->count();
 
 
         if ($check > 0) {
@@ -133,7 +139,7 @@ class ProductoController extends Controller
 
             try {
 
-                $producto->delete();
+                $product->delete();
 
                 return response()->json(['status' => 'success', 'message' => 'Producto eliminado']);
 

@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('venta_detalles', function (Blueprint $table) {
             $table->id();
-            $table->integer('venta_id');
             $table->integer('producto_id');
-            $table->decimal('precio_producto', 8, 2);
+            $table->decimal('precio_producto',8,2);
             $table->integer('cantidad');
-            $table->decimal('subtotal', 8, 2);
+            $table->integer('venta_id');
             $table->timestamps();
         });
     }
