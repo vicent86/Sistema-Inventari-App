@@ -24,7 +24,7 @@ class ProductoController extends Controller
     }
 
 
-    public function ProductList(Request $request)
+    public function ProductoLista(Request $request)
     {
 
 
@@ -44,7 +44,7 @@ class ProductoController extends Controller
 
         if ($request->cat != '') {
 
-            $producto->where('category_id', '=', $request->cat);
+            $producto->where('categoria_id', '=', $request->cat);
 
         }
 

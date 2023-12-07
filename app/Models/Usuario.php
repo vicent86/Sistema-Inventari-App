@@ -13,7 +13,7 @@ class Usuario extends Model
 
 
     protected $fillable = [
-        'nombre', 'email', 'password','role'
+        'nombre', 'email', 'password','role',
     ];
 
     protected $hidden = [
