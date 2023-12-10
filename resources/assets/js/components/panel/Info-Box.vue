@@ -170,11 +170,25 @@
 
 <script>
 import axios from 'axios';
+import { base_url } from "./config.js";
 export default {
     data() {
         return {
             info: {},
             isLoading: true,
+            total_clientes: 0,
+            total_proveedores : 0,
+            total_producto : 0,
+            total_factura : 0,
+            cantidad_total : 0,
+            cantidad_vendida : 0,
+            total_cantidad_vendida : 0,
+            cantidad_actual : 0,
+            total_cantidad_actual : 0,
+            total_importe_pagado : 0,
+            total_restante : 0,
+            total_beneficio_bruto :  0,
+            total_beneficio_neto : 0
         };
     },
 

@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">Example Component</div>
@@ -15,10 +15,12 @@
 </template>
 
 <script>
-import axios from 'axios';
+
 export default {
-    mounted() {
+    mounted: function () {
         console.log('Component mounted.')
     }
 }
 </script>
+
+

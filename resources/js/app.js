@@ -4,19 +4,22 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import './bootstrap';
-import { createApp } from 'vue';
+require('./bootstrap');
+//require('../sass/app.scss')
+const { createApp } = require('vue');
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
- * registering components with the application instance so they are ready
+ * registering components with the application instance, so they are ready
  * to use in your application's views. An example is included for you.
  */
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
+const ExampleComponent = require('./components/ExampleComponent.vue');
+const PanelComponent = require('../assets/js/components/panel/Info-Box.vue')
 app.component('example-component', ExampleComponent);
+app.component('info-box', PanelComponent);
 
 /**
  * The following block of code may be used to automatically register your
