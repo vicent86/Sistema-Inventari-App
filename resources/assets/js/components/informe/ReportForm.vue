@@ -104,6 +104,7 @@
 import Datepicker from 'vuejs-datepicker';
 import mixin from '../../mixin.mjs';
 import axios from 'axios';
+import {base_url} from "../panel/config";
 
 export default {
     props: ['categoria', 'user', 'cliente', 'proveedor'],

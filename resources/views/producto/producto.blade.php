@@ -21,7 +21,7 @@
                     </h2>
                 </div>
 
-                <view-product :categorys="{{ json_encode($categoria) }}"></view-product>
+                <view-product :categorias="{{ json_encode($categoria) }}"></view-product>
 
             </div>
         </div>

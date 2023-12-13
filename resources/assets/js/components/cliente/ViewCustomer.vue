@@ -73,6 +73,7 @@ import mixin from "../../mixin.mjs";
 import axios from "axios";
 import UpdateCustomer from "./UpdateCustomer.vue";
 import Pagination from '../pagination/pagination.vue';
+import {base_url} from "../panel/config";
 
 export default {
     mixins: [mixin],

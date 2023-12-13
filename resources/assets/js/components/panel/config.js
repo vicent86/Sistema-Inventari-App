@@ -1,14 +1,17 @@
-// En un archivo llamado config.js
-export const base_url = "http://localhost/login";
+// En el componente Vue
+const axios = require('axios');
+const config = require('./config.js');
 
-// En tu componente Vue
-import { base_url } from './config.js';
-
-export default {
-    // ...
+module.exports =  {
+    base_url: "http://localhost/login",
+    data() {
+        return {
+            // Aquí van tus otras propiedades de data...
+        };
+    },
     methods: {
         getData() {
-            axios.get(base_url + "info-box").then((response) => {
+            axios.get(config.base_url + "info-box").then((response) => {
                 this.info = response.data;
                 this.isLoading = false;
             });

@@ -94,6 +94,7 @@ import { EventBus } from "../../vue-asset";
 import mixin from "../../mixin.mjs";
 import Datepicker from "vuejs-datepicker";
 import axios from "axios";
+import {base_url} from "../panel/config";
 
 export default {
     name: "create-payment",

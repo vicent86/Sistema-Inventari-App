@@ -303,7 +303,7 @@
                                     <td>
                                         <multiselect
                                             v-model="
-                                                    faxtura.producto[index]
+                                                    factura.producto[index]
                                                         .categoria
                                                 "
                                             deselect-label=""
@@ -642,6 +642,7 @@ import axios from "axios";
 import mixin from "../../mixin.mjs";
 import Datepicker from "vue3-datepicker";
 import Multiselect from "vue-multiselect";
+import {base_url} from "../panel/config";
 
 export default {
     props: ["categorias", "clientes"],

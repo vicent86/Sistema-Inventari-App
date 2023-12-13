@@ -66,6 +66,7 @@ import mixin from "../../mixin.mjs";
 import axios from "axios";
 import UpdateUser from "./UpdateUser.vue";
 import Pagination from '../pagination/pagination.vue';
+import {base_url} from "../panel/config";
 
 export default {
     mixins: [mixin],

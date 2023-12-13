@@ -453,6 +453,7 @@ import { EventBus } from "../../vue-asset";
 import axios from "axios";
 import mixin from "../../mixin.mjs";
 import Datepicker from "vue3-datepicker";
+import {base_url} from "../panel/config";
 
 export default {
     props: ["categorias", "clientes"],

@@ -3011,6 +3011,377 @@ function withinMaxClamp(min, value, max) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./resources/assets/js/components/panel/Info-Box.vue?vue&type=script&lang=js":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./resources/assets/js/components/panel/Info-Box.vue?vue&type=script&lang=js ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+/* harmony import */ var _config_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config.js */ "./resources/assets/js/components/panel/config.js");
+/* harmony import */ var _config_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_config_js__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      info: {},
+      isLoading: true,
+      total_clientes: 0,
+      total_proveedores: 0,
+      total_producto: 0,
+      total_factura: 0,
+      cantidad_total: 0,
+      cantidad_vendida: 0,
+      total_cantidad_vendida: 0,
+      cantidad_actual: 0,
+      total_cantidad_actual: 0,
+      total_importe_pagado: 0,
+      total_restante: 0,
+      total_beneficio_bruto: 0,
+      total_beneficio_neto: 0
+    };
+  },
+  created: function created() {
+    this.getData();
+  },
+  methods: {
+    getData: function getData() {
+      var _this = this;
+      axios__WEBPACK_IMPORTED_MODULE_1__["default"].get(_config_js__WEBPACK_IMPORTED_MODULE_0__.base_url + "info-box").then(function (response) {
+        _this.info = response.data;
+        _this.isLoading = false;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js ***!
+  \********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./resources/assets/js/components/panel/Info-Box.vue?vue&type=template&id=c44c43a4":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./resources/assets/js/components/panel/Info-Box.vue?vue&type=template&id=c44c43a4 ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+
+var _hoisted_1 = {
+  "class": "wrap"
+};
+var _hoisted_2 = {
+  key: 0,
+  "class": "row"
+};
+var _hoisted_3 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("h1", {
+  style: {
+    "text-align": "center"
+  }
+}, "Cargando......", -1 /* HOISTED */);
+var _hoisted_4 = [_hoisted_3];
+var _hoisted_5 = {
+  key: 1,
+  "class": "row clearfix"
+};
+var _hoisted_6 = {
+  "class": "col-lg-3 col-md-3 col-sm-6 col-xs-12"
+};
+var _hoisted_7 = {
+  "class": "info-box bg-teal hover-zoom-effect"
+};
+var _hoisted_8 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "icon"
+}, [/*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("i", {
+  "class": "material-icons"
+}, "contacts")], -1 /* HOISTED */);
+var _hoisted_9 = {
+  "class": "content"
+};
+var _hoisted_10 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "text"
+}, "Clientes", -1 /* HOISTED */);
+var _hoisted_11 = {
+  "class": "number"
+};
+var _hoisted_12 = {
+  "class": "col-lg-3 col-md-3 col-sm-6 col-xs-12"
+};
+var _hoisted_13 = {
+  "class": "info-box bg-orange hover-zoom-effect"
+};
+var _hoisted_14 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "icon"
+}, [/*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("i", {
+  "class": "material-icons"
+}, "people")], -1 /* HOISTED */);
+var _hoisted_15 = {
+  "class": "content"
+};
+var _hoisted_16 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "text"
+}, "Proveedores", -1 /* HOISTED */);
+var _hoisted_17 = {
+  "class": "number"
+};
+var _hoisted_18 = {
+  "class": "col-lg-3 col-md-3 col-sm-6 col-xs-12"
+};
+var _hoisted_19 = {
+  "class": "info-box bg-deep-purple hover-zoom-effect"
+};
+var _hoisted_20 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "icon"
+}, [/*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("i", {
+  "class": "material-icons"
+}, "category")], -1 /* HOISTED */);
+var _hoisted_21 = {
+  "class": "content"
+};
+var _hoisted_22 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "text"
+}, "Productos", -1 /* HOISTED */);
+var _hoisted_23 = {
+  "class": "number"
+};
+var _hoisted_24 = {
+  "class": "col-lg-3 col-md-3 col-sm-6 col-xs-12"
+};
+var _hoisted_25 = {
+  "class": "info-box bg-blue-grey hover-zoom-effect"
+};
+var _hoisted_26 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "icon"
+}, [/*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("i", {
+  "class": "material-icons"
+}, "receipt")], -1 /* HOISTED */);
+var _hoisted_27 = {
+  "class": "content"
+};
+var _hoisted_28 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "text"
+}, "Facturas", -1 /* HOISTED */);
+var _hoisted_29 = {
+  "class": "number"
+};
+var _hoisted_30 = {
+  "class": "col-lg-3 col-md-3 col-sm-6 col-xs-12"
+};
+var _hoisted_31 = {
+  "class": "info-box bg-indigo hover-zoom-effect"
+};
+var _hoisted_32 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "icon"
+}, [/*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("i", {
+  "class": "material-icons"
+}, "local_mall")], -1 /* HOISTED */);
+var _hoisted_33 = {
+  "class": "content"
+};
+var _hoisted_34 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "text"
+}, "Existencia total", -1 /* HOISTED */);
+var _hoisted_35 = {
+  "class": "number"
+};
+var _hoisted_36 = {
+  "class": "col-lg-3 col-md-3 col-sm-6 col-xs-12"
+};
+var _hoisted_37 = {
+  "class": "info-box bg-pink hover-zoom-effect"
+};
+var _hoisted_38 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "icon"
+}, [/*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("i", {
+  "class": "material-icons"
+}, "local_shipping")], -1 /* HOISTED */);
+var _hoisted_39 = {
+  "class": "content"
+};
+var _hoisted_40 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "text"
+}, "Existencia vendida", -1 /* HOISTED */);
+var _hoisted_41 = {
+  "class": "number"
+};
+var _hoisted_42 = {
+  "class": "col-lg-3 col-md-3 col-sm-6 col-xs-12"
+};
+var _hoisted_43 = {
+  "class": "info-box bg-blue hover-zoom-effect"
+};
+var _hoisted_44 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "icon"
+}, [/*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("i", {
+  "class": "material-icons"
+}, "bar_chart")], -1 /* HOISTED */);
+var _hoisted_45 = {
+  "class": "content"
+};
+var _hoisted_46 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "text"
+}, "Existencia actual", -1 /* HOISTED */);
+var _hoisted_47 = {
+  "class": "number"
+};
+var _hoisted_48 = {
+  "class": "col-lg-3 col-md-3 col-sm-6 col-xs-12"
+};
+var _hoisted_49 = {
+  "class": "info-box bg-deep-orange hover-zoom-effect"
+};
+var _hoisted_50 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "icon"
+}, [/*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("i", {
+  "class": "material-icons"
+}, "payment")], -1 /* HOISTED */);
+var _hoisted_51 = {
+  "class": "content"
+};
+var _hoisted_52 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "text"
+}, "Importe vendido", -1 /* HOISTED */);
+var _hoisted_53 = {
+  "class": "number"
+};
+var _hoisted_54 = {
+  "class": "col-lg-3 col-md-3 col-sm-6 col-xs-12"
+};
+var _hoisted_55 = {
+  "class": "info-box bg-green hover-zoom-effect"
+};
+var _hoisted_56 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "icon"
+}, [/*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("i", {
+  "class": "material-icons"
+}, "attach_money")], -1 /* HOISTED */);
+var _hoisted_57 = {
+  "class": "content"
+};
+var _hoisted_58 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "text"
+}, "Importe pagado", -1 /* HOISTED */);
+var _hoisted_59 = {
+  "class": "number"
+};
+var _hoisted_60 = {
+  "class": "col-lg-3 col-md-3 col-sm-6 col-xs-12"
+};
+var _hoisted_61 = {
+  "class": "info-box bg-red hover-zoom-effect"
+};
+var _hoisted_62 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "icon"
+}, [/*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("i", {
+  "class": "material-icons"
+}, "money_off")], -1 /* HOISTED */);
+var _hoisted_63 = {
+  "class": "content"
+};
+var _hoisted_64 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "text"
+}, "Importe restante", -1 /* HOISTED */);
+var _hoisted_65 = {
+  "class": "number"
+};
+var _hoisted_66 = {
+  "class": "col-lg-3 col-md-3 col-sm-6 col-xs-12"
+};
+var _hoisted_67 = {
+  "class": "info-box bg-brown hover-zoom-effect"
+};
+var _hoisted_68 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "icon"
+}, [/*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("i", {
+  "class": "material-icons"
+}, "Pagos")], -1 /* HOISTED */);
+var _hoisted_69 = {
+  "class": "content"
+};
+var _hoisted_70 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "text"
+}, "Beneficio bruto", -1 /* HOISTED */);
+var _hoisted_71 = {
+  "class": "number"
+};
+var _hoisted_72 = {
+  "class": "col-lg-3 col-md-3 col-sm-6 col-xs-12"
+};
+var _hoisted_73 = {
+  "class": "info-box bg-cyan hover-zoom-effect"
+};
+var _hoisted_74 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "icon"
+}, [/*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("i", {
+  "class": "material-icons"
+}, "money")], -1 /* HOISTED */);
+var _hoisted_75 = {
+  "class": "content"
+};
+var _hoisted_76 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", {
+  "class": "text"
+}, "Beneficio neto", -1 /* HOISTED */);
+var _hoisted_77 = {
+  "class": "number"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(), Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_1, [$data.isLoading ? (Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(), Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_2, [].concat(_hoisted_4))) : Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("v-if", true), !$data.isLoading ? (Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(), Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_5, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_6, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_7, [_hoisted_8, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_9, [_hoisted_10, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_11, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())($data.info.total_clientes), 1 /* TEXT */)])])]), Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_12, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_13, [_hoisted_14, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_15, [_hoisted_16, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_17, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())($data.info.total_proveedores), 1 /* TEXT */)])])]), Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_18, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_19, [_hoisted_20, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_21, [_hoisted_22, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_23, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())($data.info.total_producto), 1 /* TEXT */)])])]), Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_24, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_25, [_hoisted_26, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_27, [_hoisted_28, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_29, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())($data.info.total_factura), 1 /* TEXT */)])])]), Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_30, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_31, [_hoisted_32, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_33, [_hoisted_34, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_35, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("small", null, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())($data.info.cantidad_total), 1 /* TEXT */)])])])]), Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_36, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_37, [_hoisted_38, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_39, [_hoisted_40, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_41, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("small", null, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())($data.info.total_cantidad_vendida), 1 /* TEXT */)])])])]), Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_42, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_43, [_hoisted_44, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_45, [_hoisted_46, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_47, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("small", null, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())($data.info.total_cantidad_actual), 1 /* TEXT */)])])])]), Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_48, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_49, [_hoisted_50, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_51, [_hoisted_52, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_53, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("small", null, "$ " + Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())($data.info.total_cantidad_vendida), 1 /* TEXT */)])])])]), Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_54, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_55, [_hoisted_56, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_57, [_hoisted_58, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_59, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("small", null, "$ " + Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())($data.info.total_importe_pagado), 1 /* TEXT */)])])])]), Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_60, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_61, [_hoisted_62, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_63, [_hoisted_64, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_65, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("small", null, "$ " + Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())($data.info.total_restante), 1 /* TEXT */)])])])]), Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_66, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_67, [_hoisted_68, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_69, [_hoisted_70, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_71, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("small", null, "$ " + Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())($data.info.total_beneficio_bruto), 1 /* TEXT */)])])])]), Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_72, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_73, [_hoisted_74, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_75, [_hoisted_76, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_77, [Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("small", null, "$ " + Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())($data.info.total_beneficio_neto), 1 /* TEXT */)])])])])])) : Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("v-if", true)]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+
+var _hoisted_1 = {
+  "class": "container"
+};
+var _hoisted_2 = /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("<div class=\"row justify-content-center\"><div class=\"col-md-8\"><div class=\"card\"><div class=\"card-header\">Example Component</div><div class=\"card-body\"> I&#39;m an example component. </div></div></div></div>", 1);
+var _hoisted_3 = [_hoisted_2];
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(), Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("div", _hoisted_1, [].concat(_hoisted_3));
+}
+
+/***/ }),
+
 /***/ "./node_modules/base64-js/index.js":
 /*!*****************************************!*\
   !*** ./node_modules/base64-js/index.js ***!
@@ -9617,7 +9988,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Info_Box_vue_vue_type_template_id_c44c43a4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Info-Box.vue?vue&type=template&id=c44c43a4 */ "./resources/assets/js/components/panel/Info-Box.vue?vue&type=template&id=c44c43a4");
-/* harmony import */ var _Info_Box_vue_vue_type_template_id_c44c43a4__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Info_Box_vue_vue_type_template_id_c44c43a4__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Info_Box_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Info-Box.vue?vue&type=script&lang=js */ "./resources/assets/js/components/panel/Info-Box.vue?vue&type=script&lang=js");
 /* harmony import */ var _node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
@@ -9626,6 +9996,34 @@ __webpack_require__.r(__webpack_exports__);
 
 ;
 const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Info_Box_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Info_Box_vue_vue_type_template_id_c44c43a4__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/assets/js/components/panel/Info-Box.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/ExampleComponent.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/ExampleComponent.vue ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ExampleComponent_vue_vue_type_template_id_299e239e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=template&id=299e239e */ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e");
+/* harmony import */ var _ExampleComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=script&lang=js */ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ExampleComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ExampleComponent_vue_vue_type_template_id_299e239e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/ExampleComponent.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -9643,87 +10041,10 @@ if (false) {}
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_1_rules_15_use_0_Info_Box_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
-/* harmony import */ var _config_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config.js */ "./resources/assets/js/components/panel/config.js");
-/* harmony import */ var _config_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_config_js__WEBPACK_IMPORTED_MODULE_0__);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-    data() {
-        return {
-            info: {},
-            isLoading: true,
-            total_clientes: 0,
-            total_proveedores : 0,
-            total_producto : 0,
-            total_factura : 0,
-            cantidad_total : 0,
-            cantidad_vendida : 0,
-            total_cantidad_vendida : 0,
-            cantidad_actual : 0,
-            total_cantidad_actual : 0,
-            total_importe_pagado : 0,
-            total_restante : 0,
-            total_beneficio_bruto :  0,
-            total_beneficio_neto : 0
-        };
-    },
-
-    created() {
-        this.getData();
-    },
-    methods: {
-        getData() {
-            axios__WEBPACK_IMPORTED_MODULE_1__["default"].get(_config_js__WEBPACK_IMPORTED_MODULE_0__.base_url + "info-box").then((response) => {
-                this.info = response.data;
-                this.isLoading = false;
-            });
-        },
-    },
-});
-
-
-/***/ }),
-
-/***/ "./resources/assets/js/components/panel/Info-Box.vue?vue&type=template&id=c44c43a4":
-/*!*****************************************************************************************!*\
-  !*** ./resources/assets/js/components/panel/Info-Box.vue?vue&type=template&id=c44c43a4 ***!
-  \*****************************************************************************************/
-/***/ (() => {
-
-throw new Error("Module parse failed: Unexpected token (2:4)\nFile was processed with these loaders:\n * ./node_modules/vue-loader/dist/index.js\nYou may need an additional loader to handle the result of these loaders.\n| \n>     <div class=\"wrap\">\n|         <div class=\"row\" v-if=\"isLoading\">\n|             <h1 style=\"text-align:center\">Cargando......</h1>");
-
-/***/ }),
-
-/***/ "./resources/js/components/ExampleComponent.vue":
-/*!******************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _ExampleComponent_vue_vue_type_template_id_299e239e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=template&id=299e239e */ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e");
-/* harmony import */ var _ExampleComponent_vue_vue_type_template_id_299e239e__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_ExampleComponent_vue_vue_type_template_id_299e239e__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ExampleComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=script&lang=js */ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js");
-/* harmony import */ var _node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
-
-
-
-
-;
-const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ExampleComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ExampleComponent_vue_vue_type_template_id_299e239e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/ExampleComponent.vue"]])
-/* hot reload */
-if (false) {}
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_1_rules_15_use_0_Info_Box_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./Info-Box.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./resources/assets/js/components/panel/Info-Box.vue?vue&type=script&lang=js");
+ 
 
 /***/ }),
 
@@ -9736,14 +10057,25 @@ if (false) {}
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_1_rules_15_use_0_ExampleComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_1_rules_15_use_0_ExampleComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./ExampleComponent.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js");
+ 
 
-    /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-        mounted:function () {
-            console.log('Component mounted.')
-        }
-    });
+/***/ }),
+
+/***/ "./resources/assets/js/components/panel/Info-Box.vue?vue&type=template&id=c44c43a4":
+/*!*****************************************************************************************!*\
+  !*** ./resources/assets/js/components/panel/Info-Box.vue?vue&type=template&id=c44c43a4 ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_1_rules_15_use_0_Info_Box_vue_vue_type_template_id_c44c43a4__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_1_rules_15_use_0_Info_Box_vue_vue_type_template_id_c44c43a4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./Info-Box.vue?vue&type=template&id=c44c43a4 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./resources/assets/js/components/panel/Info-Box.vue?vue&type=template&id=c44c43a4");
 
 
 /***/ }),
@@ -9752,9 +10084,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************************************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e ***!
   \************************************************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module parse failed: Unexpected token (2:4)\nFile was processed with these loaders:\n * ./node_modules/vue-loader/dist/index.js\nYou may need an additional loader to handle the result of these loaders.\n| \n>     <div class=\"container\">\n|         <div class=\"row justify-content-center\">\n|             <div class=\"col-md-8\">");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_1_rules_15_use_0_ExampleComponent_vue_vue_type_template_id_299e239e__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_1_rules_15_use_0_ExampleComponent_vue_vue_type_template_id_299e239e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./ExampleComponent.vue?vue&type=template&id=299e239e */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[15].use[0]!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e");
+
 
 /***/ }),
 
@@ -13008,9 +13346,29 @@ module.exports = axios;
 /*!********************************************************!*\
   !*** ./resources/assets/js/components/panel/config.js ***!
   \********************************************************/
-/***/ (() => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\resources\\assets\\js\\components\\panel\\config.js: Identifier 'base_url' has already been declared. (5:9)\n\n\u001b[0m \u001b[90m 3 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 4 |\u001b[39m \u001b[90m// En tu componente Vue\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m \u001b[36mimport\u001b[39m { base_url } \u001b[36mfrom\u001b[39m \u001b[32m'./config.js'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   |\u001b[39m          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 6 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 7 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 8 |\u001b[39m     \u001b[90m// ...\u001b[39m\u001b[0m\n    at constructor (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:356:19)\n    at Parser.raise (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:3223:19)\n    at ScopeHandler.checkRedeclarationInScope (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:1496:19)\n    at ScopeHandler.declareName (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:1467:12)\n    at Parser.declareNameFromIdentifier (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:7484:16)\n    at Parser.checkIdentifier (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:7480:12)\n    at Parser.checkLVal (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:7419:12)\n    at Parser.finishImportSpecifier (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:14175:10)\n    at Parser.parseImportSpecifier (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:14352:17)\n    at Parser.parseNamedImportSpecifiers (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:14330:36)\n    at Parser.parseImportSpecifiersAndAfter (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:14152:37)\n    at Parser.parseImport (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:14145:17)\n    at Parser.parseStatementContent (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:12710:27)\n    at Parser.parseStatementLike (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:12588:17)\n    at Parser.parseModuleItem (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:12565:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:13189:36)\n    at Parser.parseBlockBody (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:13182:10)\n    at Parser.parseProgram (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:12464:10)\n    at Parser.parseTopLevel (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:12454:25)\n    at Parser.parse (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:14376:10)\n    at parse (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\parser\\lib\\index.js:14417:38)\n    at parser (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\core\\lib\\parser\\index.js:41:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:64:37)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\core\\lib\\transformation\\index.js:21:50)\n    at run.next (<anonymous>)\n    at transform (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\core\\lib\\transform.js:22:33)\n    at transform.next (<anonymous>)\n    at step (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\gensync\\index.js:261:32)\n    at C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\gensync\\index.js:273:13\n    at async.call.result.err.err (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\gensync\\index.js:223:11)\n    at C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\gensync\\index.js:189:28\n    at C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\@babel\\core\\lib\\gensync-utils\\async.js:67:7\n    at C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\gensync\\index.js:113:33\n    at step (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\gensync\\index.js:287:14)\n    at C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\gensync\\index.js:273:13\n    at async.call.result.err.err (C:\\Users\\vicen\\OneDrive\\Escritorio\\Sistema-Inventari-App\\node_modules\\gensync\\index.js:223:11)");
+// En el componente Vue
+var axios = __webpack_require__(/*! axios */ "./node_modules/axios/dist/browser/axios.cjs");
+var config = __webpack_require__(/*! ./config.js */ "./resources/assets/js/components/panel/config.js");
+module.exports = {
+  base_url: "http://localhost/login",
+  data: function data() {
+    return {
+      // Aquí van tus otras propiedades de data...
+    };
+  },
+  methods: {
+    getData: function getData() {
+      var _this = this;
+      axios.get(config.base_url + "info-box").then(function (response) {
+        _this.info = response.data;
+        _this.isLoading = false;
+      });
+    }
+  }
+  // ...
+};
 
 /***/ }),
 
@@ -13048,7 +13406,7 @@ app.component('info-box', PanelComponent);
  * Vue components. It will recursively scan this directory for the Vue
  * components and automatically register them with their "basename".
  *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * E.g. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
 // Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {

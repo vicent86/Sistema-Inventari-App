@@ -1,5 +1,5 @@
 require('./vue-asset');
-Vue.component('info-box', require('./components/panel/Info_Box.vue'));
+Vue.component('info-box', require('./components/panel/Info-Box.vue'));
 new Vue({
-    el: '#inventory'
+    el: '#app'
 });

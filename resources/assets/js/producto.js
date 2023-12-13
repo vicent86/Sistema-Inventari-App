@@ -3,7 +3,7 @@ Vue.component('create-product', require('./components/producto/CreateProduct.vue
 Vue.component('view-product', require('./components/producto/ViewProduct.vue'));
 
 
-var app = new Vue({
+const app = new Vue({
 
-    el: '#inventory'
+    el: '#app'
 });

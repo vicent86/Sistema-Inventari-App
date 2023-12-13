@@ -120,6 +120,7 @@ import Datepicker from 'vuejs-datepicker';
 import UpdateInvoice from './UpdateInvoice.vue';
 import CreatePayment from './CreatePayment.vue';
 import ViewPayment from './ViewPayment.vue';
+import {base_url} from "../panel/config";
 
 
 export default {

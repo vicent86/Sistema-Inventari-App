@@ -76,6 +76,7 @@
 import { EventBus } from "../../vue-asset";
 import axios from "axios";
 import mixin from "../../mixin.mjs";
+import {base_url} from "../panel/config";
 
 export default {
     mixins: [mixin],

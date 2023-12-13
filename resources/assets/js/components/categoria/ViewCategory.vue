@@ -53,12 +53,13 @@
 
 <script>
 import axios from "axios";
-import { EventBus } from "../../vue-asset";
+import  EventBus  from "../../vue-asset";
 import mixin from "../../mixin.mjs";
 
 import Updatecategory from "./UpdateCategoria.vue";
 
 import Pagination from "../pagination/pagination.vue";
+import {base_url} from "../panel/config";
 
 export default {
     mixins: [mixin],

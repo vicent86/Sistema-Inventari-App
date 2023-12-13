@@ -81,6 +81,7 @@ import axios from "axios";
 import editStock from "./editStock";
 import UpdateQuantity from "./UpdateStock.vue";
 import Pagination from "../pagination/pagination.vue";
+import {base_url} from "../panel/config";
 
 export default {
     props: ["productos"],

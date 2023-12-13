@@ -82,6 +82,7 @@ import axios from "axios";
 import mixin from "../../mixin.mjs";
 import UpdateProduct from "./UpdateProduct";
 import Pagination from "../pagination/pagination.vue";
+import {base_url} from "../panel/config";
 
 export default {
     props: ["categorias"],
