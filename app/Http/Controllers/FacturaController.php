@@ -13,18 +13,20 @@ use App\Models\VentaDetalles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Inertia\Inertia;
 
 class FacturaController extends Controller
 {
     public function index()
     {
-        //$categoria = Categoria::orderBy('name','asc')->get();
-        //$cliente = Cliente::orderBy('customer_name','asc')->get();
+        $categoria = Categoria::orderBy('name','asc')->get();
+        $cliente = Cliente::orderBy('customer_name','asc')->get();
 
-        //return view('factura.factura',[
-            //'categoria'=>$categoria,
-            //'cliente'=>$cliente
-        //]);
+        return Inertia::render('Factura/Factura',[
+            'categoria'=>$categoria,
+            'cliente'=>$cliente
+        ]);
+
     }
 
 

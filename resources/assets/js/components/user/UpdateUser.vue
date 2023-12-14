@@ -21,7 +21,7 @@
                       <i class="material-icons">account_circle</i>
                     </span>
                                         <div class="form-line">
-                                            <input type="text" class="form-control date" placeholder="Nombre" v-model="user.nombre">
+                                            <input type="text" class="form-control date" placeholder="Nombre" v-model="user.name">
                                         </div>
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@ export default {
         return {
             user: {
                 id: '',
-                nombre: "",
+                name: "",
                 email: "",
 
             },
@@ -81,7 +81,7 @@ export default {
         EventBus.$on("user-edit", function (id) {
             _this.id = id;
             _this.findUser(id);
-            $('#update-user').modal('show');
+            //$('#update-user').modal('show');
         });
     },
 
@@ -97,7 +97,7 @@ export default {
                 .then(response => {
                     this.user = {
                         id: response.data.id,
-                        nombre: response.data.nombre,
+                        name: response.data.name,
                         email: response.data.email,
 
                     };
@@ -113,7 +113,7 @@ export default {
 
                     this.user = {
                         id: "",
-                        nombre: "",
+                        name: "",
                         email: "",
 
                     };

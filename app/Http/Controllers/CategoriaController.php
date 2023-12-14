@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Categoria;
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class CategoriaController extends Controller
 {
     public function index()
     {
-        return view('category.category');
+        return Inertia::render('Categoria/Categoria');
     }
 
     public function CategoriaLista(Request $request)
@@ -18,7 +19,7 @@ class CategoriaController extends Controller
         $categorias = Categoria::orderBy('id','desc');
 
         if ($request->name != '') {
-            $categorias->where('name', 'LIKE', '%'. $request->name . '%');
+            $categorias->where('nombre', 'LIKE', '%'. $request->name . '%');
         }
 
         $categorias = $categorias->paginate(10);

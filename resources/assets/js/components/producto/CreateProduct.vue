@@ -85,9 +85,9 @@ import {base_url} from "../panel/config";
 export default {
     props: ["categorias"],
     mixins: [mixin],
-    mounted() {
-        $('#mySelect2').val('0').trigger('change'); // Establece la opción por defecto
-    },
+    // mounted() {
+    //     $('#mySelect2').val('0').trigger('change'); // Establece la opción por defecto
+    // },
     data() {
         return {
             producto: {
@@ -110,14 +110,14 @@ export default {
                 .post(base_url + "producto", this.producto)
 
                 .then((response) => {
-                    $("#create-product").modal("hide");
+                    //$("#create-product").modal("hide");
 
                     this.producto = { id: 0, nombre: "", descripcion: "", precio: 0.0, categoria: "", id_proveedor: 0 , estado: true};
                     this.errors = null;
                     EventBus.$emit("product-created", response.data);
 
                     this.successALert(response.data);
-                    $('#mySelect2').val('0').trigger('change');
+                    //$('#mySelect2').val('0').trigger('change');
                 })
                 .catch((err) => {
                     if (err.response) {

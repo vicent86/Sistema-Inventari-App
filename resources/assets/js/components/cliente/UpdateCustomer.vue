@@ -109,15 +109,15 @@ export default {
 
             _this.getEditData(id);
 
-            $('#update-customer').modal('show');
+            //$('#update-customer').modal('show');
 
 
 
         });
 
-        $('#update-customer').on('hidden.bs.modal', function () {
-            _this.resetForm();
-        });
+        // $('#update-customer').on('hidden.bs.modal', function () {
+        //     _this.resetForm();
+        // });
 
     },
 
@@ -147,7 +147,7 @@ export default {
             axios.post(base_url + "cliente/update/" + this.cliente.id, this.cliente)
 
                 .then(response => {
-                    $("#update-customer").modal("hide");
+                    //$("#update-customer").modal("hide");
                     this.resetForm();
                     EventBus.$emit("customer-created", 1);
                     this.successALert(response.data);

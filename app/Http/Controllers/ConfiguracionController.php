@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Inertia\Inertia;
 
 class ConfiguracionController extends Controller
 {
     public function index()
     {
-        //return view('configuracion.change_password');
+        return Inertia::render('Configuracion/Change_Password');
     }
 
     public function create()

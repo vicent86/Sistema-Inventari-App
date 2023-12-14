@@ -76,7 +76,7 @@
 import axios from 'axios';
 import {EventBus} from '../../vue-asset';
 import mixin from '../../mixin.mjs';
-import MomentMixin from '../../moment_mixin.mjs';
+import MomentMixin from '../../moment_js.mjs';
 import {base_url} from "../panel/config";
 
 export default{
@@ -124,11 +124,11 @@ export default{
 
     mounted() {
 
-        const _this = this;
-        $("#viewPayment").on('hidden.bs.modal', function(){
-
-            _this.closeModal()
-        });
+        //const _this = this;
+        // $("#viewPayment").on('hidden.bs.modal', function(){
+        //
+        //     _this.closeModal()
+        // });
     },
 
     methods : {

@@ -6,6 +6,7 @@ use App\Models\Categoria;
 use App\Models\Producto;
 use App\Models\Stock;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class ProductoController extends Controller
 {
@@ -13,9 +14,9 @@ class ProductoController extends Controller
     {
 
 
-        $categoria = Categoria::orderBy('nombre', 'asc')
-            ->get();
-        return view('producto.producto', ['categoria' => $categoria]);
+        $categoria = Categoria::orderBy('nombre', 'asc')->get();
+        return Inertia::render('Producto/Producto', ['categoria' => $categoria]);
+
     }
 
     public function create()
@@ -32,13 +33,13 @@ class ProductoController extends Controller
             'categoria' => function ($query) {
                 $query->select('id', 'name');
             }
-        ])->orderBy('producto_nombre', 'asc');
+        ])->orderBy('nombre', 'asc');
 
         $nombre = $request->nombre;
 
         if ($nombre != '') {
 
-            $producto->where('producto_nombre', 'LIKE', '%' . $nombre . '%');
+            $producto->where('nombre', 'LIKE', '%' . $nombre . '%');
 
         }
 
@@ -65,7 +66,7 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required|unique:productos,producto_nombre',
+            'nombre' => 'required|unique:productos,nombre',
             'categoria' => 'required',
         ]);
 
@@ -107,7 +108,7 @@ class ProductoController extends Controller
 
             $product = Producto::find($id);
             $product->categoria_id = $request->categoria;
-            $product->producto_nombre = $request->nombre;
+            $product->nombre = $request->nombre;
             $product->descripcion = $request->descripcion;
 
             $product->update();

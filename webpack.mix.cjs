@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js').vue({version: 3, extractVueStyles:true})
+mix.js('resources/assets/js/components/app.js', 'public/js').vue({version: 3, extractVueStyles:true})
     .postCss('resources/css/app.css', 'public/css', [
         //
     ])
@@ -27,7 +27,7 @@ mix.js('resources/js/app.js', 'public/js').vue({version: 3, extractVueStyles:tru
         },
         resolve: {
             alias: {
-                'vue$': 'vue/dist/vue.esm.js'
+                //'vue$': 'vue/dist/vue.esm.js'
             }
         }
     });

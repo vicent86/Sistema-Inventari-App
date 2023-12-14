@@ -35,7 +35,7 @@
                                             :value="cliente.id"
                                             :key="cliente"
                                         >
-                                            {{ cliente.nombre_cliente }}
+                                            {{ cliente.nombre }}
                                         </option>
                                     </select>
                                     <span
@@ -81,12 +81,12 @@
                                     <i class="material-icons">person</i>
                                 </span>
                                 <div class="form-line">
-                                    <vuejs-datepicker
+                                    <vue3-datepicker
                                         :input-class="'form-control'"
                                         :format="'yyyy-MM-dd'"
                                         value-format="yyyy-MM-dd"
                                         v-model="factura.fecha_factura"
-                                    ></vuejs-datepicker>
+                                    ></vue3-datepicker>
                                     <span
                                         class="requiredField"
                                         v-if="
@@ -203,7 +203,7 @@
                                                 :value="pr.id"
                                                 :key="pr"
                                             >
-                                                {{ pr.producto_nombre }}
+                                                {{ pr.nombre }}
                                             </option>
                                         </select>
                                         <span
@@ -460,7 +460,7 @@ export default {
     mixins: [mixin],
 
     components: {
-        "vuejs-datepicker": Datepicker,
+        "vue3-datepicker": Datepicker,
     },
 
     data() {

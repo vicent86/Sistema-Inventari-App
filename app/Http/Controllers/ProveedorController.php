@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Proveedor;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class ProveedorController extends Controller
 {
@@ -11,7 +12,8 @@ class ProveedorController extends Controller
     {
 
 
-       // return view('proveedor.proveedor');
+        return Inertia::render('Proveedor/Proveedor');
+
 
     }
 

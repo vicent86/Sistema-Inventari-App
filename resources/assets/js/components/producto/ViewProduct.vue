@@ -39,7 +39,7 @@
                     <tbody>
                     <tr v-for="(value,index) in productos.data" :key="index">
                         <td>{{ value.categoria.nombre }}</td>
-                        <td>{{ value.producto_nombre }}</td>
+                        <td>{{ value.nombre }}</td>
                         <td>
                             <div
                                 style="width: 650px; text-align: justify; height: 40px; white-space: normal; text-overflow: ellipsis; overflow: hidden;">{{ value.descripcion }}</div>

@@ -107,12 +107,12 @@ export default {
 
             vm.editVendor(id);
 
-            $("#update-vendor").modal("show");
+            //$("#update-vendor").modal("show");
         });
 
-        $("#update-vendor").on("hidden.bs.modal", function () {
-            vm.closeModal();
-        });
+        // $("#update-vendor").on("hidden.bs.modal", function () {
+        //     vm.closeModal();
+        // });
     },
 
     methods: {
@@ -138,7 +138,7 @@ export default {
                         this.successALert(res.data);
                         EventBus.$emit("vendor-created", 1);
                         this.closeModal();
-                        $("#update-vendor").modal("hide");
+                        //$("#update-vendor").modal("hide");
                     }
                 })
                 .catch((err) => {

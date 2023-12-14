@@ -8,19 +8,21 @@ use App\Models\Proveedor;
 use App\Models\Stock;
 use App\Models\VentaDetalles;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class StockController extends Controller
 {
     public function index()
-    {
-        $vendor = Proveedor::orderBy('nombre', 'asc')->get();
+    {$vendor = Proveedor::orderBy('nombre', 'asc')->get();
         $category = Categoria::orderBy('nombre', 'asc')->get();
-        $product = Producto::orderBy('producto_nombre', 'asc')->get();
-        return view('stock.stock', [
+        $product = Producto::orderBy('nombre', 'asc')->get();
+
+        return Inertia::render('Stock/Stock', [
             'proveedor' => $vendor,
             'categoria' => $category,
             'producto' => $product,
         ]);
+
     }
 
 
@@ -30,7 +32,7 @@ class StockController extends Controller
         $stock = Stock::with(
             [
                 'producto' => function ($query) {
-                    $query->select('id', 'producto_nombre');
+                    $query->select('id', 'nombre');
                 },
                 'proveedor' => function ($query) {
                     $query->select('id', 'nombre');

@@ -68,6 +68,8 @@
 </template>
 
 <script>
+import __ from "lodash/fp/__";
+
 export default {
     data() {
         return {
@@ -79,6 +81,7 @@ export default {
         }
     },
     methods: {
+        __,
         register() {
             // Aquí puedes agregar la lógica para registrarse
             console.log(`Registrando al usuario: ${this.name}`);

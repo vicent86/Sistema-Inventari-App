@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Inertia\Inertia;
 
 class UsuarioManagementController extends Controller
 {
     public function index()
     {
-        //return view('usuario.usuario');
+        return Inertia::render('Usuario/Usuario');
     }
 
 

@@ -100,7 +100,7 @@ export default {
                 .post(base_url + "proveedor", this.proveedor)
 
                 .then((response) => {
-                    $("#create-vendor").modal("hide");
+                   // $("#create-vendor").modal("hide");
 
                     this.vendor = { nombre: "", email: "", direccion: "", cif: "" };
                     this.errors = null;

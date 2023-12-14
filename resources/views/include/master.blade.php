@@ -14,7 +14,7 @@
     </style>
 </head>
 
-<body class="theme-teal" onload="loaded()">
+<body class="theme-teal" onload="loaded()" id="app">
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
     <div class="loader">

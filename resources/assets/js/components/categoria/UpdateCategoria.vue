@@ -92,13 +92,13 @@ export default {
 
             vm.editcategory(id);
 
-            $('#update-category').modal('show');
+            //$('#update-category').modal('show');
 
         });
 
-        $('#update-category').on('hidden.bs.modal', function () {
-            vm.closeModal();
-        });
+        // $('#update-category').on('hidden.bs.modal', function () {
+        //     vm.closeModal();
+        // });
 
 
 
@@ -133,7 +133,7 @@ export default {
                         this.successALert(res.data);
                         EventBus.$emit('category-created', 1);
                         this.closeModal();
-                        $('#update-category').modal('hide');
+                        //$('#update-category').modal('hide');
                     }
 
 

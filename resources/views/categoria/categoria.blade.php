@@ -33,6 +33,6 @@
 
 @push('script')
 
-    <script type="text/javascript" src="{{ url('public/js/categoria.js') }}"></script>
+    <script type="text/javascript" src="{{ url('js/app.js') }}"></script>
 
 @endpush

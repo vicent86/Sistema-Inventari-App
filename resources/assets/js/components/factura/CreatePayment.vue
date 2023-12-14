@@ -92,16 +92,17 @@
 <script type="text/javascript">
 import { EventBus } from "../../vue-asset";
 import mixin from "../../mixin.mjs";
-import Datepicker from "vuejs-datepicker";
+import Datepicker from "vue3-datepicker";
 import axios from "axios";
 import {base_url} from "../panel/config";
+import pago from "../../../../../public/js/stock";
 
 export default {
     name: "create-payment",
     mixins: [mixin],
 
     components: {
-        "vuejs-datepicker": Datepicker,
+        "vue3-datepicker": Datepicker,
     },
 
     data() {
@@ -126,6 +127,7 @@ export default {
     },
 
     methods: {
+        pago,
         Payment() {
             axios
                 .post(base_url + "pago", this.pago)
@@ -133,7 +135,7 @@ export default {
                     this.successALert(response.data);
                     this.resetForm();
 
-                    $("#smallModal").modal("hide");
+                    //$("#smallModal").modal("hide");
 
                     EventBus.$emit("invoice-created", 1);
                 })

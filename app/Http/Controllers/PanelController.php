@@ -9,13 +9,14 @@ use App\Models\Stock;
 use App\Models\Venta;
 use App\Models\VentaDetalles;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class PanelController extends Controller
 {
     public function index()
     {
 
-        return view('welcome');
+        return Inertia::render('Welcome');
     }
 
 
@@ -24,7 +25,7 @@ class PanelController extends Controller
 
         $total_invoice = Venta::count();
         $total_customer = Cliente::count();
-        $total_vendor = Proveedor::count();
+        $total_proveedor = Proveedor::count();
         $total_sold_amount = Venta::sum('importe_total');
         $total_paid_amount = Venta::sum('importe_pagado');
         $total_outstanding = $total_sold_amount - $total_paid_amount;
@@ -41,7 +42,7 @@ class PanelController extends Controller
 
             'total_factura' => $total_invoice,
             'total_cliente' => $total_customer,
-            'total_proveedor' => $total_vendor,
+            'total_proveedor' => $total_proveedor,
             'total_importe_vendido' => round($total_sold_amount),
             'total_importe_pagado' => round($total_paid_amount),
             'total_penmdiente' => round($total_outstanding),

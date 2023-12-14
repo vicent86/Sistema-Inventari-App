@@ -101,7 +101,7 @@ export default {
                 .post(base_url + "cliente", this.cliente)
 
                 .then(response => {
-                    $("#create-customer").modal("hide");
+                    //$("#create-customer").modal("hide");
 
                     this.cliente = {
                         nombre_cliente: "",

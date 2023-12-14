@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <input type="text" class="form-control" v-on:keyup="getData" placeholder="Buscar por nombre" name
-                           v-model="nombre">
+                           v-model="name">
                 </div>
                 <div class="col-md-6">
                     <input type="text" class="form-control" v-on:keyup="getData" placeholder="Buscar por correo" name
@@ -31,7 +31,7 @@
                     </thead>
                     <tbody>
                     <tr v-for="(value, index) in users.data" v-bind:key="index">
-                        <td>{{ value.nombre }}</td>
+                        <td>{{ value.name }}</td>
                         <td>{{ value.email }}</td>
                         <td>
                             <button @click="editUser(value.id)" type="button"
@@ -79,7 +79,7 @@ export default {
     data() {
         return {
             users: [],
-            nombre: "",
+            name: "",
             email: "",
             isLoading: true,
         };

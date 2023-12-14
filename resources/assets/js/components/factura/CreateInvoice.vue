@@ -568,7 +568,7 @@
                                     <input
                                         type="text"
                                         class="form-control"
-                                        v-model="factura.importe_pagado"
+                                        v-model="factura.importe_pago"
                                         placeholder="Pay Now"
                                         style="border-bottom: 1px solid #ccc"
                                     />
@@ -577,7 +577,7 @@
 
                             <div
                                 class="form-group"
-                                v-show="factura.importe_pagado > 0"
+                                v-show="factura.importe_pago > 0"
                             >
                                 <label>Pagado en :</label>
                                 <div class="input-group focused">
@@ -618,7 +618,7 @@
                                     <div class="input-group-addon">$</div>
                                     <label>{{
                                             factura.totalidad -
-                                            factura.importe_pagado
+                                            factura.importe_pago
                                         }}</label>
                                 </div>
                             </div>

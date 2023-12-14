@@ -11,6 +11,6 @@ class UsuarioController extends Controller
     {
         Auth::logout();
         Session::forget('side_menu');
-        return redirect('/');
+        return redirect('/login');
     }
 }

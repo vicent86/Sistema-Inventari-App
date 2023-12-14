@@ -72,7 +72,7 @@ export default {
                 .post(base_url + "categoria", this.categoria)
 
                 .then((response) => {
-                    $("#create-category").modal("hide");
+                   //$("#create-category").modal("hide");
 
                     this.categoria = { nombre: "", descripcion: "", estado: true };
                     this.errors = null;

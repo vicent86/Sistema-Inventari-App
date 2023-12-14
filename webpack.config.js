@@ -1,6 +1,7 @@
 const VueLoaderPlugin = require('vue-loader');
 const path = require('path');
 
+
 module.exports = {
     module: {
         rules: [
@@ -18,14 +19,15 @@ module.exports = {
                     },
                 },
             },
+
         ],
     },
     plugins: [new VueLoaderPlugin()],
 
     resolve: {
-        extensions: ['.wasm', '.mjs', '.js', '.jsx', '.json', '.vue'],
-        alias: {
-            'vue': '@vue/runtime-dom'
-        }
+        extensions: ['*.wasm', '*.mjs', '*.js', '*.jsx', '*.json', '*.vue'],
+        // alias: {
+        //     'vue': '@vue/runtime-dom'
+        // }
     },
 };

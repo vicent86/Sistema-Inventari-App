@@ -36,7 +36,7 @@
                       <i class="material-icons">inventory</i>
                     </span>
                                         <div class="form-line">
-                                            <input type="text" class="form-control date" placeholder="Nombre" v-model="produco.nombre" />
+                                            <input type="text" class="form-control date" placeholder="Nombre" v-model="producto.nombre" />
                                         </div>
                                     </div>
                                 </div>
@@ -111,14 +111,14 @@ export default {
         EventBus.$on("product-edit", function (id) {
             vm.product.id = id;
 
-            $("#update-product").modal("show");
+            //$("#update-product").modal("show");
 
             vm.editProduct(id);
         });
 
-        $("#update-product").on("hidden.bs.modal", function () {
-            vm.closeModal();
-        });
+        // $("#update-product").on("hidden.bs.modal", function () {
+        //     vm.closeModal();
+        // });
     },
 
 
@@ -138,7 +138,7 @@ export default {
                         precio: response.data.precio,
                         estado: response.data.estado,
                     };
-                    $('#mySelect2Update').val(response.data.category_id).trigger('change');
+                    //$('#mySelect2Update').val(response.data.category_id).trigger('change');
                 });
         },
         updateProduct(id) {
@@ -149,7 +149,7 @@ export default {
                         this.successALert(res.data);
                         EventBus.$emit("product-created", 1);
                         this.closeModal();
-                        $("#update-product").modal("hide");
+                        //$("#update-product").modal("hide");
                     }
                 })
                 .catch((err) => {

@@ -40,10 +40,10 @@
                     <tbody>
                     <tr v-for="(value, index) in stocks.data" :key="index">
                         <td>{{ value.producto.nombre }}</td>
-                        <td>{{ value.producto.producto_nombre }}</td>
+                        <td>{{ value.producto.nombre }}</td>
                         <td>{{ value.stock.cantidad }}</td>
                         <td>{{ value.stock.ultima_actualizacion }}</td>
-                        <td>{{ value.user.nombre }}</td>
+                        <td>{{ value.user.name }}</td>
                         <td>{{ selllDateFormatted(value.created_at) }}</td>
                         <td>
                             <button @click="editQty(value.id, value.producto_id)" type="button"
@@ -76,7 +76,7 @@
 <script>
 import { EventBus } from "../../vue-asset";
 import mixin from "../../mixin.mjs";
-import MomentMixin from "../../moment_mixin.mjs";
+import MomentMixin from "../../moment_js.mjs";
 import axios from "axios";
 import editStock from "./editStock";
 import UpdateQuantity from "./UpdateStock.vue";

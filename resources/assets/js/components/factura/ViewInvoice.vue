@@ -113,10 +113,10 @@
 <script>
 import { EventBus } from '../../vue-asset';
 import mixin from '../../mixin.mjs';
-import MomentMixin from '../../moment_mixin.mjs';
+import MomentMixin from '../../moment_js.mjs';
 import Pagination from '../pagination/pagination.vue';
 import axios from 'axios';
-import Datepicker from 'vuejs-datepicker';
+import Datepicker from 'vue3-datepicker';
 import UpdateInvoice from './UpdateInvoice.vue';
 import CreatePayment from './CreatePayment.vue';
 import ViewPayment from './ViewPayment.vue';
@@ -133,7 +133,7 @@ export default {
         'update-invoice': UpdateInvoice,
         'create-payment': CreatePayment,
         'view-payment': ViewPayment,
-        'vuejs-datepicker': Datepicker,
+        'vue3-datepicker': Datepicker,
         'pagination': Pagination,
 
     },

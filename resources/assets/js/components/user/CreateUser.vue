@@ -22,7 +22,7 @@
 											<i class="material-icons">account_circle</i>
 										</span>
                                         <div class="form-line">
-                                            <input type="text" class="form-control date" placeholder="Nombre" v-model="user.nombre">
+                                            <input type="text" class="form-control date" placeholder="Nombre" v-model="user.name">
                                         </div>
                                     </div>
                                 </div>
@@ -96,7 +96,7 @@ export default {
 
             user: {
 
-                nombre: '',
+                name: '',
                 email: '',
                 password: '',
                 password_confirmation: '',
@@ -124,7 +124,7 @@ export default {
 
                 .then(response => {
 
-                    $('#create-user').modal('hide');
+                    //$('#create-user').modal('hide');
 
                     this.user = {
                         'nombre': '',

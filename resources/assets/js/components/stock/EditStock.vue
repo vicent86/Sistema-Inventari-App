@@ -113,12 +113,12 @@ export default {
             vm.stock.producto = producto_id;
             vm.editStock(id);
             vm.findProduct();
-            $("#edit-stock").modal("show");
+            //$("#edit-stock").modal("show");
         });
 
-        $("#edit-stock").on("hidden.bs.modal", function () {
-            vm.resetForm();
-        });
+        // $("#edit-stock").on("hidden.bs.modal", function () {
+        //     vm.resetForm();
+        // });
     },
 
     methods: {
@@ -159,7 +159,7 @@ export default {
                 .post(base_url + "stock/update/" + id, this.stock)
 
                 .then((response) => {
-                    $("#edit-stock").modal("hide");
+                    //$("#edit-stock").modal("hide");
 
                     this.resetForm();
 

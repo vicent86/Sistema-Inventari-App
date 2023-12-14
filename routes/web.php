@@ -4,16 +4,17 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ConfiguracionController;
 use App\Http\Controllers\FacturaController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InformeController;
 use App\Http\Controllers\PanelController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\UsuarioManagementController;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,20 +22,32 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
 });
 
-Auth::routes();
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
 Route::group(['auth', ['role', 'admin']] ,function () {
+
     //Productos
     Route::resource('productos', ProductoController::class);
     Route::get('productos/delete/{id}', [ProductoController::class, 'destroy']);
@@ -47,7 +60,7 @@ Route::group(['auth', ['role', 'admin']] ,function () {
     Route::get('categoria/delete/{id}', [CategoriaController::class,'destroy']);
     Route::get('categoria/update/{id}', [CategoriaController::class,'update']);
     Route::get('categoria-lista', [CategoriaController::class,'CategoriaLista']);
-    Route::get('all-categoria', [CategoriaController::class,'AllCategoria']);
+    Route::get('all-categoria', [CategoriaController::class,'AllCategory']);
 
     //Stock
     Route::resource('stock', StockController::class);
@@ -85,9 +98,17 @@ Route::group(['auth', ['role', 'admin']] ,function () {
     Route::get('get/invoice/number', [FacturaController::class, 'getLastInvoice']);
 
     //Informe
-    Route::get('informe', [InformeController::class, 'index'])->name('informe.index');
-    Route::get('get-informe', [InformeController::class, 'store'])->name('informe.store');
-    Route::get('print-informe', [InformeController::class, 'Print'])->name('informe.print');
+    Route::get('informe', function () {
+        return Inertia::render('Informe/Index');
+    })->name('informe.index');
+
+    Route::get('get-informe', function () {
+        return Inertia::render('Informe/Store');
+    })->name('informe.store');
+
+    Route::get('print-informe', function (){
+        return Inertia::render('Informe/Print');
+    })->name('informe.print');
 
     //Manejo Usuarios
 
@@ -97,8 +118,13 @@ Route::group(['auth', ['role', 'admin']] ,function () {
     Route::get('usuario-lista', [UsuarioManagementController::class, 'UsuarioLista']);
 
     //Configuracion
-    Route::get('password-change', [ConfiguracionController::class, 'index'])->name('password.index');
-    Route::post('password-change', [ConfiguracionController::class, 'store'])->name('password.store');
+    Route::get('password-change', function (){
+        return Inertia::render('Password/Index');
+    })->name('password.index');
+
+    Route::post('password-change', function (){
+        return Inertia::render('Password/Store');
+    })->name('password.store');
 
     //Panel
     Route::get('PanelController', [PanelController::class, 'index']);
@@ -107,6 +133,7 @@ Route::group(['auth', ['role', 'admin']] ,function () {
 });
 
 Route::group(['auth', ['role', 'gerente']],function () {
+
     //Productos
     Route::resource('productos', ProductoController::class);
     Route::get('productos/update/{id}', [ProductoController::class, 'update']);
@@ -117,7 +144,7 @@ Route::group(['auth', ['role', 'gerente']],function () {
     Route::resource('categoria', CategoriaController::class);
     Route::get('categoria/update/{id}', [CategoriaController::class,'update']);
     Route::get('categoria-lista', [CategoriaController::class,'CategoriaLista']);
-    Route::get('all-categoria', [CategoriaController::class,'AllCategoria']);
+    Route::get('all-categoria', [CategoriaController::class,'AllCategory']);
 
     //Stock
     Route::resource('stock', StockController::class);
@@ -148,9 +175,17 @@ Route::group(['auth', ['role', 'gerente']],function () {
     Route::get('get/invoice/number', [FacturaController::class, 'getLastInvoice']);
 
     //Informe
-    Route::get('informe', [InformeController::class, 'index'])->name('informe.index');
-    Route::get('get-informe', [InformeController::class, 'store'])->name('informe.store');
-    Route::get('print-informe', [InformeController::class, 'Print'])->name('informe.print');
+    Route::get('informe', function () {
+        return Inertia::render('Informe/Index');
+    })->name('informe.index');
+
+    Route::get('get-informe', function () {
+        return Inertia::render('Informe/Store');
+    })->name('informe.store');
+
+    Route::get('print-informe', function (){
+        return Inertia::render('Informe/Print');
+    })->name('informe.print');
 
 
     //Panel
@@ -168,7 +203,7 @@ Route::group(['auth', ['role', 'empleado']],function () {
     //Categoria
     Route::resource('categoria', CategoriaController::class);
     Route::get('categoria-lista', [CategoriaController::class,'CategoriaLista']);
-    Route::get('all-categoria', [CategoriaController::class,'AllCategoria']);
+    Route::get('all-categoria', [CategoriaController::class,'AllCategory']);
 
     //Stock
     Route::resource('stock', StockController::class);
@@ -197,9 +232,17 @@ Route::group(['auth', ['role', 'empleado']],function () {
     Route::get('get/invoice/number', [FacturaController::class, 'getLastInvoice']);
 
     //Informe
-    Route::get('informe', [InformeController::class, 'index'])->name('informe.index');
-    Route::get('get-informe', [InformeController::class, 'store'])->name('informe.store');
-    Route::get('print-informe', [InformeController::class, 'Print'])->name('informe.print');
+    Route::get('informe', function () {
+        return Inertia::render('Informe/Index');
+    })->name('informe.index');
+
+    Route::get('get-informe', function () {
+        return Inertia::render('Informe/Store');
+    })->name('informe.store');
+
+    Route::get('print-informe', function (){
+        return Inertia::render('Informe/Print');
+    })->name('informe.print');
 
     //Panel
     Route::get('PanelController', [PanelController::class, 'index']);
@@ -207,10 +250,5 @@ Route::group(['auth', ['role', 'empleado']],function () {
 
 });
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+require __DIR__.'/auth.php';

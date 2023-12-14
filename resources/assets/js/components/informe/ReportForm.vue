@@ -19,8 +19,8 @@
         <div class="col-md-4">
             <div class="input-group">
                 <div class="form-line">
-                    <vuejs-datepicker :required="true" :placeholder="'Fecha de *'" :name="'start_date'"
-                                      :input-class="'form-control'"></vuejs-datepicker>
+                    <vue3-datepicker :required="true" :placeholder="'Fecha de *'" :name="'start_date'"
+                                      :input-class="'form-control'"></vue3-datepicker>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
                     <select class="form-control select2" name="product_id" v-model="producto_id" v-select="producto_id"
                             v-on:change="findStock">
                         <option value="">Elige Producto (opcional)</option>
-                        <option v-for="pr in producto" :value="pr.id" :key="pr">{{ pr.producto_nombre }}</option>
+                        <option v-for="pr in producto" :value="pr.id" :key="pr">{{ pr.nombre }}</option>
                     </select>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                 <div class="form-line">
                     <select class="form-control select2" name="customer_id">
                         <option value="">Cliente (optional)</option>
-                        <option v-for="cs in cliente" :value="cs.id" :key="cs">{{ cs.nombre_cliente }}</option>
+                        <option v-for="cs in cliente" :value="cs.id" :key="cs">{{ cs.nombre }}</option>
                     </select>
                 </div>
             </div>
@@ -101,7 +101,7 @@
 
 <script>
 
-import Datepicker from 'vuejs-datepicker';
+import Datepicker from 'vue3-datepicker';
 import mixin from '../../mixin.mjs';
 import axios from 'axios';
 import {base_url} from "../panel/config";
@@ -110,7 +110,7 @@ export default {
     props: ['categoria', 'user', 'cliente', 'proveedor'],
     components: {
 
-        'vuejs-datepicker': Datepicker,
+        'vue3-datepicker': Datepicker,
 
     },
     mixins: [mixin],

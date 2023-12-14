@@ -56,7 +56,7 @@
                 </table>
             </div>
 
-            <pagination :pageData="vendors"></pagination>
+            <pagination :pageData="proveedores"></pagination>
 
             <div class="row">
                 <update-vendor></update-vendor>

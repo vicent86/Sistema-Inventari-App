@@ -5,7 +5,7 @@
             <div class="modal-dialog modal-sm" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="defaultModalLabel">Actualizar cantidad de {{ producto.producto_nombre }} - {{ producto.ultima_actualizacion }}</h4>
+                        <h4 class="modal-title" id="defaultModalLabel">Actualizar cantidad de {{ producto.nombre }} - {{ producto.ultima_actualizacion }}</h4>
                     </div>
                     <div class="modal-body">
                         <div class="alert alert-danger" v-if="errors">
@@ -21,7 +21,7 @@
 											<i class="material-icons">palette</i>
 										</span>
                                         <div class="form-line">
-                                            <select class="form-control" v-model="producto.state">
+                                            <select class="form-control" v-model="producto.estado">
                                                 <option :value="''">¿Tú quieres?</option>
                                                 <option :value="'+'">+</option>
                                                 <option :value="'-'">-</option>
@@ -104,13 +104,13 @@ export default{
 
             vm.editproduct(id);
 
-            $('#edit-qty').modal('show');
+            //$('#edit-qty').modal('show');
 
         });
 
-        $('#edit-qty').on('hidden.bs.modal', function(){
-            vm.closeModal();
-        });
+        // $('#edit-qty').on('hidden.bs.modal', function(){
+        //     vm.closeModal();
+        // });
 
 
 
@@ -130,7 +130,7 @@ export default{
 
                     this.producto = {
                         id:response.data.id,
-                        producto_nombre:response.data.product.producto_nombre,
+                        nombre:response.data.producto.nombre,
                         current_qty:response.data.current_quantity,
                         ultima_actualizacion:response.data.ultima_actualizacion,
                     }
@@ -146,7 +146,7 @@ export default{
                     this.successALert(res.data);
                     EventBus.$emit('stock-created',1);
                     this.closeModal();
-                    $('#edit-qty').modal('hide');
+                    //$('#edit-qty').modal('hide');
 
 
 

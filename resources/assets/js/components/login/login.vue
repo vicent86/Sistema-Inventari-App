@@ -53,6 +53,8 @@
 </template>
 
 <script>
+import __ from "lodash/fp/__";
+
 export default {
     data() {
         return {
@@ -62,6 +64,7 @@ export default {
         }
     },
     methods: {
+        __,
         login() {
             // Aquí puedes agregar la lógica para iniciar sesión
             console.log(`Iniciando sesión con el correo electrónico: ${this.email}`);

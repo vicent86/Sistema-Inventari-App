@@ -122,7 +122,7 @@ export default {
                 .post(base_url + "stock", this.stock)
 
                 .then((response) => {
-                    $("#create-stock").modal("hide");
+                    //$("#create-stock").modal("hide");
 
                     this.resetForm();
 

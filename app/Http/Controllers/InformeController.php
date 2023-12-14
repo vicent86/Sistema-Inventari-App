@@ -11,23 +11,24 @@ use App\Models\Venta;
 use App\Models\VentaDetalles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Inertia\Inertia;
 
 class InformeController extends Controller
 {
     public function index()
     {
+        $customer = Cliente::all();
+        $category = Categoria::all();
+        $user = Usuario::all();
+        $vendor = Venta::all();
 
-        //$customer = Cliente::all();
-        //$category = Categoria::all();
-        //$user = Usuario::all();
-        //$vendor = Venta::all();
+        return Inertia::render('Informe/Informe', [
+            'cliente' => $customer,
+            'categoria' => $category,
+            'user' => $user,
+            'proveedor' => $vendor,
+        ]);
 
-        //return view('informe.informe', [
-            //'customer' => $customer,
-            //'category' => $category,
-            //'user' => $user,
-            //'vendor' => $vendor,
-        //]);
     }
 
     public function create()

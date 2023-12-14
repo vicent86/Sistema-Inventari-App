@@ -31,6 +31,6 @@
 
 @push('script')
 
-    <script type="text/javascript" src="{{ url('public/js/proveedor.js') }}"></script>
+    <script type="text/javascript" src="{{ url('js/app.js') }}"></script>
 
 @endpush
